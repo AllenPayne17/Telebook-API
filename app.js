@@ -30,6 +30,7 @@ app.post('https://telebooks.onrender.com/register', async (req, res) => {
 
   try {
     await registration.save();
+    res.status(201).send('Registration successful');
     res.sendFile(path.join(__dirname, 'public', 'signup.html'));
   } catch (error) {
     res.status(500).send('Error registering user');
