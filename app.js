@@ -35,7 +35,7 @@ app.post('/register', async (req, res) => {
   try {
     await registration.save();
     // Redirect to the static success.html page
-    res.redirect('/index.html');
+    res.redirect('/profile.html');
   } catch (error) {
     res.status(500).send('Error registering user');
   }
