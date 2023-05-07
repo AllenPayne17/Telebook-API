@@ -1,17 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Serve the static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect(process.env.ATLAS_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-// Define the Registration model schema
 const registrationSchema = new mongoose.Schema({
   name: String,
   contactNumber: String,
@@ -21,7 +24,6 @@ const registrationSchema = new mongoose.Schema({
 
 const Registration = mongoose.model('Registration', registrationSchema);
 
-// Use relative paths for your route definitions
 app.post('/register', async (req, res) => {
   const registration = new Registration({
     name: req.body.name,
@@ -32,7 +34,8 @@ app.post('/register', async (req, res) => {
 
   try {
     await registration.save();
-    res.status(201).send('Registration successful');
+    // Redirect to the static success.html page
+    res.redirect('/success.html');
   } catch (error) {
     res.status(500).send('Error registering user');
   }
