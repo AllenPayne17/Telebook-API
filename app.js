@@ -20,7 +20,7 @@ const registrationSchema = new mongoose.Schema({
 
 const Registration = mongoose.model('Registration', registrationSchema);
 
-app.post('/register', async (req, res) => {
+app.post('https://telebooks.onrender.com/register', async (req, res) => {
   const registration = new Registration({
     name: req.body.name,
     contactNumber: req.body.contactNumber,
@@ -30,23 +30,19 @@ app.post('/register', async (req, res) => {
 
   try {
     await registration.save();
-    res.status(201).send('Registration successful');
+    res.status(201).sendFile(path.join(__dirname, 'public', 'signup.html'));
   } catch (error) {
     res.status(500).send('Error registering user');
   }
 });
 
-app.get('/registrations', async (req, res) => {
+app.get('https://telebooks.onrender.com/registrations', async (req, res) => {
   try {
     const registrations = await Registration.find();
     res.status(200).json(registrations);
   } catch (error) {
     res.status(500).send('Error fetching registrations');
   }
-});
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'signup.html'));
 });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
