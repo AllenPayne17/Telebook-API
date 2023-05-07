@@ -44,5 +44,4 @@ app.get('https://telebooks.onrender.com/registrations', async (req, res) => {
     res.status(500).send('Error fetching registrations');
   }
 });
-
 app.listen(3000, () => console.log('Server running on port 3000'));
