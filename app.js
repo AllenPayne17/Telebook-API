@@ -30,7 +30,7 @@ app.post('https://telebooks.onrender.com/register', async (req, res) => {
 
   try {
     await registration.save();
-    res.status(201).sendFile(path.join(__dirname, 'public', 'signup.html'));
+    res.sendFile(path.join(__dirname, 'public', 'signup.html'));
   } catch (error) {
     res.status(500).send('Error registering user');
   }
@@ -43,6 +43,10 @@ app.get('https://telebooks.onrender.com/registrations', async (req, res) => {
   } catch (error) {
     res.status(500).send('Error fetching registrations');
   }
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'signup.html'));
 });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
