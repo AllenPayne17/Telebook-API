@@ -11,15 +11,6 @@ mongoose.connect(process.env.ATLAS_URI, {
   useUnifiedTopology: true,
 });
 
-const registrationSchema = new mongoose.Schema({
-  name: String,
-  contactNumber: Number,
-  email: String,
-  date: Date,
-});
-
-const Registration = mongoose.model('Registration', registrationSchema);
-
 app.post('https://telebooks.onrender.com/register', async (req, res) => {
   const registration = new Registration({
     name: req.body.name,
