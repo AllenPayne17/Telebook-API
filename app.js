@@ -27,7 +27,6 @@ app.post('/register', async (req, res) => {
     email: req.body.email,
     date: req.body.date,
   });
-  
 
   try {
     await registration.save();
@@ -38,13 +37,16 @@ app.post('/register', async (req, res) => {
 });
 
 app.get('/registrations', async (req, res) => {
-    try {
-      const registrations = await Registration.find();
-      res.status(200).json(registrations);
-    } catch (error) {
-      res.status(500).send('Error fetching registrations');
-    }
-  });
+  try {
+    const registrations = await Registration.find();
+    res.status(200).json(registrations);
+  } catch (error) {
+    res.status(500).send('Error fetching registrations');
+  }
+});
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.listen(3000, () => console.log('Server running on port 3000'));
