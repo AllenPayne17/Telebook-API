@@ -12,58 +12,65 @@
       <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
 
-
     <style>
-        .doctor-profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+
+.content {
+    
 }
 
-.doctor-profile img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin-bottom: 20px;
+.intro {
+    max-width: 250px;
+    margin: auto;
+    padding-top: 20px;
 }
-
-.doctor-profile h2 {
-  margin: 0;
-  font-size: 24px;
+.border {
+    margin-top: 200px;
+}
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 500px;
   text-align: center;
+  margin: auto;
+  margin-bottom: 50px;
+  height: 700px;
+  position: relative;
 }
 
-.doctor-profile .specialty {
-  margin: 10px 0;
-  font-style: italic;
-  font-weight: bold;
+.title {
+  color: grey;
+  font-size: 18px;
 }
 
-.doctor-profile .description {
-  margin: 10px 0;
-  text-align: justify;
-}
-
-.doctor-profile .contact-info {
-  margin-top: 20px;
-  list-style: none;
-  padding: 0;
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #16a085;
   text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  position: absolute;
+  bottom: 0;
+  right: 0; /* or left: 0; */
+  
 }
 
-.doctor-profile .contact-info li {
-  margin-bottom: 10px;
-  font-size: 16px;
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
 }
 
-.doctor-profile .contact-info li i {
-  margin-right: 10px;
+button:hover, a:hover {
+  opacity: 0.7;
 }
-
     </style>
 
   </head>
@@ -76,8 +83,8 @@
 <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> TeleBook </a>
 
 <nav class="navbar">
-  <a href="#home">Profile</a>
-  <a href="#services">Logout</a>
+  <a href="https://telebooks.onrender.com/#profile.html">Profile</a>
+  <a href="https://telebooks.onrender.com/index.html">Logout</a>
 </nav>
 
 <div id="menu-btn" class="fas fa-bars"></div>
@@ -86,17 +93,119 @@
 
 <!--HEADER END-->
 
-<div class="doctor-profile">
-    <img src="path-to-image.jpg" alt="Doctor's profile picture">
-    <h2>Dr. Firstname Lastname</h2>
-    <p class="specialty">Specialty: Cardiology</p>
-    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac dolor sed turpis blandit pharetra. Duis et congue sapien. Sed id urna auctor, sollicitudin lectus eu, fermentum purus.</p>
-    <ul class="contact-info">
-      <li><i class="fas fa-phone"></i> 123-456-7890</li>
-      <li><i class="fas fa-envelope"></i> doctor@email.com</li>
-      <li><i class="fas fa-map-marker-alt"></i> Address, City, State Zip</li>
-    </ul>
-  </div>
+<div class="border">
+
+</div>
+
+<!--PROFILE-->
+
+<div class="profile">
+    
+    <div class="card">
+        <img src="./image/doc-1.jpg" alt="Maria" style="width:100%">
+        <div class="content">
+            <h1>Dr. Maria Santos</h1>
+            <p>+63-912-345-6789</p>
+            <p class="title">Internist</p>
+            <p>Santos Medical Clinic</p>
+            <p class="intro">Dr. Maria Santos is a dedicated internist promoting health and wellness for her patients. With over 20 years of experience, she has served the Makati City community, providing primary care to her patients.</p>
+            <p><button>View Profile</button></p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="./image/doc-2.jpg" alt="Juan" style="width:100%">
+        <div class="content">
+            <h1>Dr. Juan dela Cruz</h1>
+            <p>+63-917-654-3210</p>
+            <p class="title">Family Doctor</p>
+            <p>Dela Cruz Family Clinic</p>
+            <p class="intro">Dr. Juan dela Cruz is a family doctor with over 15 years of experience in caring for patients of all ages. He is known for his extensive knowledge in family health and primary care.</p>
+            <p><button>View Profile</button></p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="./image/doc-3.jpg" alt="Lourdes" style="width:100%">
+        <div class="content">
+            <h1>Dr. Lourdes Reyes</h1>
+            <p>+63-915-123-4567</p>
+            <p class="title">Pediatrician</p>
+            <p>Reyes Pediatrics Clinic</p>
+            <p class="intro">Dr. Lourdes Reyes is an experienced pediatrician caring for young patients in Pasig City. With over 25 years of experience, she is a trusted specialist in children's health.</p>
+            <p><button>View Profile</button></p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="./image/doc-4.jpg" alt="Antonio" style="width:100%">
+
+        <div class="content">
+            <h1>Dr. Antonio Ocampo</h1>
+            <p>+63-933-789-0123</p>
+            <p class="title">Cardiologist</p>
+            <p>Ocampo Cardiology Center</p>
+            <p class="intro">Dr. Antonio Ocampo is a cardiology expert providing high-quality care for patients with heart conditions. For over 30 years, he has been dedicated to improving the heart health of his patients.</p>
+            <p><button>View Profile</button></p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="./image/doc-5.jpg" alt="Jennifer" style="width:100%">
+        <div class="content">
+            <h1>Dr. Jennifer Lim</h1>
+            <p>+63-947-258-3691</p>
+            <p class="title">Dermatologist</p>
+            <p>Lim Dermatology Clinic</p>
+            <p class="intro">Dr. Jennifer Lim is a dermatologist with extensive experience in caring for skin, hair, and nails. At her clinic in Cebu City, she provides specialist care for patients with various skin conditions.</p>
+            <p><button>View Profile</button></p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="./image/doc-6.jpg" alt="Ricardo" style="width:100%">
+        <div class="content">
+            <h1>Dr. RicardoMendoza</h1>
+            <p>+63-927-456-7890</p>
+            <p class="title">Ophthalmologist</p>
+            <p>Mendoza Eye Center</p>
+            <p class="intro">Dr. Ricardo Mendoza is an ophthalmologist caring for patients with various vision problems. At his clinic in Davao City, he provides high-quality eye care, ranging from basic examinations to specialist treatments.</p>
+            <p><button>View Profile</button></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="./image/doc-6.jpg" alt="Elizabeth" style="width:100%">
+        <div class="content">
+            <h1>Dr. Elizabeth Garcia</h1>
+            <p>+63-999-234-5678</p>
+            <p class="title">Dentist</p>
+            <p>Garcia Dental Clinic</p>
+            <p class="intro">Dr. Elizabeth Garcia is a dentist with over 10 years of experience in caring for teeth and providing clean and healthy smiles to her patients. At her clinic in Baguio City, she offers a variety of dental services, from basic care to specialist treatments.</p>
+            <p><button>View Profile</button></p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="./image/doc-6.jpg" alt="Ramon" style="width:100%">
+        <div class="content">
+            <h1>Dr. Ramon Santiago</h1>
+            <p>+63-906-789-1234</p>
+            <p class="title">Orthopedic Surgeon</p>
+            <p>Santiago Orthopedic Clinic</p>
+            <p class="intro">Dr. Ramon Santiago is an orthopedic surgeon with over 20 years of experience in caring for patients with bone, joint, and muscle problems. At his clinic in Iloilo City, he provides specialist care for patients with musculoskeletal conditions and helps them return to their normal lives.</p>
+            <p><button>View Profile</button></p>
+        </div>
+    </div>
+</div>
+
+
+
+<!--PROFILE END-->
+
+<div class="border">
+
+</div>
 
 <!--FOOTER-->
 
@@ -130,9 +239,7 @@
       </div>
 
   </div>
-
   <div class="credit"> created by <span>its.mvgni</span> | ©2023 All Rights Reserved </div>
-
 </section>
 
 <!--FOOTER END-->
