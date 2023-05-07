@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -11,7 +13,18 @@ mongoose.connect(process.env.ATLAS_URI, {
   useUnifiedTopology: true,
 });
 
-app.post('https://telebooks.onrender.com/register', async (req, res) => {
+// Define the Registration model schema
+const registrationSchema = new mongoose.Schema({
+  name: String,
+  contactNumber: String,
+  email: String,
+  date: Date,
+});
+
+const Registration = mongoose.model('Registration', registrationSchema);
+
+// Use relative paths for your route definitions
+app.post('/register', async (req, res) => {
   const registration = new Registration({
     name: req.body.name,
     contactNumber: req.body.contactNumber,
@@ -27,7 +40,7 @@ app.post('https://telebooks.onrender.com/register', async (req, res) => {
   }
 });
 
-app.get('https://telebooks.onrender.com/registrations', async (req, res) => {
+app.get('/registrations', async (req, res) => {
   try {
     const registrations = await Registration.find();
     res.status(200).json(registrations);
@@ -35,4 +48,5 @@ app.get('https://telebooks.onrender.com/registrations', async (req, res) => {
     res.status(500).send('Error fetching registrations');
   }
 });
+
 app.listen(3000, () => console.log('Server running on port 3000'));
